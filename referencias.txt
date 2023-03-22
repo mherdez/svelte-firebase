@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=fd6mlU1gr4I
+https://www.youtube.com/watch?v=cTAJ9dOHrD4&list=PLPl81lqbj-4J6xcUu7SW4f3Y1ou8X8rRY&index=5
+https://bootswatch.com/
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+https://www.youtube.com/watch?v=Y9-UkL6ent4&t=1466s
+https://bluuweb.github.io/svelte-youtube/01-bases/#crud
