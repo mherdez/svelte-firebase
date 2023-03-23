@@ -23,6 +23,7 @@
     collection(db, 'tasks'),
     (querySnapshot) => {
       tasks = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+			console.log(tasks);
     },
     (err) => {
       console.log(err);
@@ -36,7 +37,7 @@
   <Router>
 		<div class="container">
 			<Route path='/'><FormTask  {task} {handleSubmit}/></Route>
-			<Route path='/team1'><Team01 /></Route>
+			<Route path='/team1'><Team01 {tasks}/></Route>
 			<Route path='/team2'><Team02 /></Route>
 			<Route path='/table'><TableView {tasks}/></Route>
 	</div>
