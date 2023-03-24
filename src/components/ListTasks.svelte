@@ -1,5 +1,6 @@
 <script>
-  export let tasks;
+  // export let tasks;
+  import { todos } from '../stores/store';
 </script>
 
 <main>
@@ -12,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each tasks as item}
+      {#each $todos as item}
         <tr>
           <td class="">{item.id}</td>
           <td class="">{item.title}</td>

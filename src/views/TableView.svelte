@@ -1,8 +1,9 @@
 <script>
   import ListTasks from '../components/ListTasks.svelte';
 
-  export let tasks;
+
+  // export let tasks;
 
 </script>
 
-<ListTasks {tasks}/>
+<ListTasks />
