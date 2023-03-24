@@ -1,7 +1,12 @@
-
 <script>
-  export let task;
-  export let handleSubmit;
+  import { todos } from '../stores/store';
+
+  let task = { title: '', description: '' };
+
+  const handleSubmit = () => {
+    todos.add(task);
+    task = { title: '', description: '' };
+  };
 </script>
 
 <form on:submit|preventDefault={handleSubmit} class="">
@@ -12,6 +17,7 @@
     type="text"
     placeholder="Escribe un titulo"
   />
+
   <label class="col-form-label" for="description">Decripcion</label>
   <textarea
     class="form-control"
@@ -20,5 +26,6 @@
     rows="3"
     placeholder="Descripcion"
   />
+
   <button class="btn btn-dark m-2">Enviar</button>
 </form>
