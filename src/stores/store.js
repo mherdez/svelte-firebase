@@ -1,11 +1,7 @@
-import { addDoc, collection, onSnapshot } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../helpers/firebase';
 
 import { writable } from 'svelte/store';
-
-
-
-
 
 
 const createTodos = () => {
@@ -20,8 +16,8 @@ const createTodos = () => {
       update(todos => [...todos]);
     },
 
-    put: querySnapshot => {
-      update(todos => querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+    put: ({ docs }) => {
+      update(() => docs.map((doc) => ({ id: doc.id, ...doc.data() })))
     }
   };
 
