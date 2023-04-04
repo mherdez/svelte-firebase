@@ -4,32 +4,32 @@ import { db } from '../helpers/firebase';
 import { writable } from 'svelte/store';
 
 
-const createTodos = () => {
+const createQuestions = () => {
 
   const { subscribe, set, update } = writable([]);
 
   return {
     subscribe,
 
-    add: async todo => {
-      await addDoc(collection(db, 'tasks'), todo);
-      // update(todos => [...todos]);
+    add: async question => {
+      await addDoc(collection(db, 'questions'), question);
     },
 
     put: ({ docs }) => {
-      update(() => docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+      update(() => docs.map((doc) => {
+        return ({ id: doc.id, ...doc.data() })
+      }))
     },
 
     del: async (id) => {
-      await deleteDoc(doc(db, 'tasks', id));
-      // update(todos => todos.filter(todo => todo.id!== id));
+      await deleteDoc(doc(db, 'questions', id));
       console.log(id + ' borrado')
     }
   };
 
 };
 
-export const todos = createTodos();
+export const questions = createQuestions();
 
 
 

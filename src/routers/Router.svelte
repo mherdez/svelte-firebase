@@ -1,6 +1,8 @@
 <script>
   import { Link, Route, Router } from 'svelte-routing';
+    import AddQuestion from '../components/AddQuestion.svelte';
   import ControlView from '../views/ControlView.svelte';
+    import MainScreen from '../views/MainScreen.svelte';
   import TableView from '../views/TableView.svelte';
   import Team01View from '../views/Team01View.svelte';
   import Team02View from '../views/Team02View.svelte';
@@ -23,6 +25,12 @@
       <div class="nav-item">
         <Link class="nav-link" to="/table">Table</Link>
       </div>
+      <div class="nav-item">
+        <Link class="nav-link" to="/questions">Questions</Link>
+      </div>
+      <div class="nav-item">
+        <Link class="nav-link" to="/main">Main Screen</Link>
+      </div>
     </div>
   </nav>
 
@@ -31,5 +39,7 @@
     <Route path="/team1"><Team01View /></Route>
     <Route path="/team2"><Team02View /></Route>
     <Route path="/table"><TableView /></Route>
+    <Route path="/questions"><AddQuestion /></Route>
+    <Route path="/main"><MainScreen /></Route>
   </div>
 </Router>
